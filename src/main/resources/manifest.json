@@ -1,0 +1,20 @@
+{
+  "Group": "dev.watersrcstack",
+  "Name": "TouchWithEyes",
+  "Version": "1.0.0",
+  "Description": "Easily disable usage of some items in Hytale. Intended for minigames / server lobby creators. Works with both vanilla and modded items.",
+  "Authors": [
+    {
+      "Name": "null / Watersrc-stack",
+      "Email": "watersrcstack@proton.me",
+      "Url": "https://github.com/Watersrc-stack/"
+    }
+  ],
+  "Website": "https://github.com/Watersrc-stack/TouchWithEyes",
+  "ServerVersion": "*",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": false,
+  "Main": "dev.watersrcstack.TouchWithEyes"
+}
