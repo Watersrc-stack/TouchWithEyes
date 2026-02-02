@@ -16,8 +16,8 @@ import dev.watersrcstack.TouchWithEyes;
 import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class DisableDropCopper extends EntityEventSystem<EntityStore, DropItemEvent.PlayerRequest> {
-    public DisableDropCopper() {
+public class DisableDrops extends EntityEventSystem<EntityStore, DropItemEvent.PlayerRequest> {
+    public DisableDrops() {
         super(DropItemEvent.PlayerRequest.class);
     }
 
@@ -28,21 +28,24 @@ public class DisableDropCopper extends EntityEventSystem<EntityStore, DropItemEv
                        @Nonnull CommandBuffer<EntityStore> commandBuffer,
                        @Nonnull DropItemEvent.PlayerRequest dropItemRequest) {
 
+        if (TouchWithEyes.tweConfig == null)
+            return;
+
         Player player = store.getComponent(archetypeChunk.getReferenceTo(index), Player.getComponentType());
         if (player == null){
-            TouchWithEyes.LOGGER.atWarning().log("OnDropCopper: unable to fetch the player");
+            TouchWithEyes.LOGGER.atWarning().log("DisableDrops: unable to fetch the player");
             return;
         }
         Inventory inventory = player.getInventory();
         ItemStack itemStack = Objects.requireNonNull(inventory.getSectionById(dropItemRequest.getInventorySectionId())).getItemStack(dropItemRequest.getSlotId());
 
         if (itemStack == null) {
-            TouchWithEyes.LOGGER.atWarning().log("OnDropCopper: unable to fetch the itemStack");
+            TouchWithEyes.LOGGER.atWarning().log("DisableDrops: unable to fetch the itemStack");
             return;
         }
         TouchWithEyes.LOGGER.atInfo().log("Item dropped: " + itemStack.getItemId());
 
-        if (Objects.equals(itemStack.getItemId(), "Ore_Copper")) {
+        if (TouchWithEyes.tweConfig.config.drop.contains(itemStack.getItemId())) {
             dropItemRequest.setCancelled(true);
         }
     }

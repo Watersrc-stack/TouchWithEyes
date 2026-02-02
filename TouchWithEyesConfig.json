@@ -1,0 +1,11 @@
+{
+  "config": {
+    "drop": [
+      "Ore_Copper",
+      "Ore_Cobalt"
+    ],
+    "interact": [
+      "Ore_Copper"
+    ]
+  }
+}
