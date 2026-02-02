@@ -4,8 +4,12 @@
       "Ore_Copper",
       "Ore_Cobalt"
     ],
-    "interact": [
-      "Ore_Copper"
+    "pickup": [
+      "Ore_Copper",
+      "Ore_Adamantite"
+    ],
+    "crafting": [
+      "Ingredient_Fibre"
     ]
   }
 }

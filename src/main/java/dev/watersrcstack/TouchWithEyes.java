@@ -7,6 +7,7 @@ import com.hypixel.hytale.logger.HytaleLogger;
 
 
 import dev.watersrcstack.events.DisableDrops;
+import dev.watersrcstack.events.DisablePickup;
 
 import javax.annotation.Nonnull;
 import java.io.*;
@@ -20,7 +21,7 @@ public class TouchWithEyes extends JavaPlugin {
 
         public static class Config {
             public Set<String> drop;
-            public Set<String> interact;
+            public Set<String> pickup;
         }
     }
 
@@ -57,7 +58,9 @@ public class TouchWithEyes extends JavaPlugin {
 
         // Events, ECS
         this.getEntityStoreRegistry().registerSystem(new DisableDrops());
+        this.getEntityStoreRegistry().registerSystem(new DisablePickup());
 
         LOGGER.atInfo().log("TouchWithEyes loaded.");
+        LOGGER.atInfo().log("Debug: mod is updating");
     }
 }
