@@ -6,6 +6,9 @@ import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.system.EntityEventSystem;
+
+import com.hypixel.hytale.server.core.entity.LivingEntity;
+import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.event.events.ecs.InteractivelyPickupItemEvent;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import dev.watersrcstack.TouchWithEyes;
@@ -36,6 +39,7 @@ public class DisablePickup extends EntityEventSystem<EntityStore, InteractivelyP
 
     @Override
     public Query<EntityStore> getQuery() {
-        return Archetype.empty();
-    }
-}
+        return Query.and(
+                Player.getComponentType()
+        );
+    }}

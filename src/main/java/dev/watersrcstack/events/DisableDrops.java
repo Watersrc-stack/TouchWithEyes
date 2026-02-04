@@ -53,6 +53,6 @@ public class DisableDrops extends EntityEventSystem<EntityStore, DropItemEvent.P
 
     @Override
     public Query<EntityStore> getQuery() {
-        return Archetype.empty();
+        return Query.and(Player.getComponentType());
     }
 }
