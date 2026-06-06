@@ -1,10 +1,10 @@
-package dev.watersrcstack.events;
+package WatersrcStack.events;
 
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.event.events.player.PlayerInteractEvent;
 
-import dev.watersrcstack.TouchWithEyes;
+import WatersrcStack.TouchWithEyes;
 
 public class DeprecatedDisablePickup {
 

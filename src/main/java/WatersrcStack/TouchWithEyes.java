@@ -1,5 +1,6 @@
-package dev.watersrcstack;
+package WatersrcStack;
 
+import WatersrcStack.commands.EditConfigCommand;
 import com.google.gson.Gson;
 import com.hypixel.hytale.server.core.event.events.player.PlayerInteractEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
@@ -10,9 +11,9 @@ import javax.annotation.Nonnull;
 import java.io.*;
 import java.util.Set;
 
-import dev.watersrcstack.events.DisableDrops;
-import dev.watersrcstack.events.DisablePickup;
-import dev.watersrcstack.events.DeprecatedDisablePickup;
+import WatersrcStack.events.DisableDrops;
+import WatersrcStack.events.DisablePickup;
+import WatersrcStack.events.DeprecatedDisablePickup;
 
 
 public class TouchWithEyes extends JavaPlugin {
@@ -64,6 +65,9 @@ public class TouchWithEyes extends JavaPlugin {
         // Events, ECS
         this.getEntityStoreRegistry().registerSystem(new DisableDrops());
         this.getEntityStoreRegistry().registerSystem(new DisablePickup());
+
+        // Commands
+        this.getCommandRegistry().registerCommand(new EditConfigCommand());
 
         LOGGER.atInfo().log("TouchWithEyes loaded.");
     }

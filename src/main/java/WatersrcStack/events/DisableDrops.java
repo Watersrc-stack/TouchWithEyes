@@ -1,6 +1,5 @@
-package dev.watersrcstack.events;
+package WatersrcStack.events;
 
-import com.hypixel.hytale.component.Archetype;
 import com.hypixel.hytale.component.ArchetypeChunk;
 import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Store;
@@ -11,7 +10,7 @@ import com.hypixel.hytale.server.core.event.events.ecs.DropItemEvent;
 import com.hypixel.hytale.server.core.inventory.Inventory;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import dev.watersrcstack.TouchWithEyes;
+import WatersrcStack.TouchWithEyes;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
